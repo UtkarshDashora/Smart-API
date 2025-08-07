@@ -1,73 +1,160 @@
-# Welcome to your Lovable project
+  Smart API Generator (React + Supabase)
+  -----
+A visual, no-code Smart API Generator built with React, HTML, CSS, and JavaScript, powered by Supabase. Define data models, auto-generate RESTful APIs, test them live, and export backend-ready code.
 
-## Project info
+📌 Features
+🖼️ Visual schema/model builder (drag & drop)
 
-**URL**: https://lovable.dev/projects/bf954679-a73b-410e-b9fb-ea5af6c98dfb
+🔁 Auto-generate full CRUD APIs
 
-## How can I edit this code?
+🔐 Supabase Authentication (email/password, OAuth)
 
-There are several ways of editing your application.
+📄 Export OpenAPI spec, Supabase schema, or Express.js boilerplate
 
-**Use Lovable**
+🔧 Live API tester & documentation viewer
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/bf954679-a73b-410e-b9fb-ea5af6c98dfb) and start prompting.
+💾 Save & sync projects to Supabase
 
-Changes made via Lovable will be committed automatically to this repo.
+🌐 CORS, RBAC, and table permission settings
 
-**Use your preferred IDE**
+🧱 Tech Stack
+Layer	Technology
+Frontend	React, JavaScript, HTML, CSS
+Backend API	Supabase (PostgreSQL, Auth, Realtime)
+State Mgmt	React Context API, Hooks
+Build Tool	Vite or CRA
+Deployment	Netlify, Vercel (frontend)
+Auth	Supabase Auth (JWT)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+📁 Project Structure
+bash
+Copy
+Edit
+smart-api-generator/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/       # UI Components
+│   ├── pages/            # Views
+│   ├── hooks/            # Custom React Hooks
+│   ├── supabase/         # Supabase client & utilities
+│   ├── utils/            # Utility functions
+│   └── App.jsx
+├── .env
+├── package.json
+└── README.md
+🔧 Getting Started
+1. Clone the Repository
+bash
+Copy
+Edit
+git clone https://github.com/your-username/smart-api-generator.git
+cd smart-api-generator
+2. Set Up Supabase
+Go to https://app.supabase.com and create a project.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Copy your API URL and Anon Key from Project Settings → API.
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Create .env File
+env
+Copy
+Edit
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+4. Install Dependencies
+bash
+Copy
+Edit
+npm install
+5. Run the App
+bash
+Copy
+Edit
 npm run dev
-```
+Visit: http://localhost:3000
 
-**Edit a file directly in GitHub**
+🔑 Supabase Auth Example
+js
+Copy
+Edit
+import { supabase } from './supabase/client'
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+const { data, error } = await supabase.auth.signInWithPassword({
+  email: 'user@example.com',
+  password: 'password123'
+})
+⚙️ Supabase Client
+js
+Copy
+Edit
+// src/supabase/client.js
+import { createClient } from '@supabase/supabase-js'
 
-**Use GitHub Codespaces**
+export const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+)
+🧪 Live Demo & Preview
+🔗 Live Demo
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+📹 Video Walkthrough
 
-## What technologies are used for this project?
+📷 Screenshot:
 
-This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+📤 Export Options
+✅ Supabase SQL schema
 
-## How can I deploy this project?
+✅ OpenAPI (Swagger) documentation
 
-Simply open [Lovable](https://lovable.dev/projects/bf954679-a73b-410e-b9fb-ea5af6c98dfb) and click on Share -> Publish.
+✅ Node.js + Express boilerplate (optional)
 
-## Can I connect a custom domain to my Lovable project?
+✅ JSON model config
 
-Yes, you can!
+📦 Deployment
+Build and Deploy (Netlify / Vercel)
+bash
+Copy
+Edit
+npm run build
+Upload the dist/ or build/ folder to your hosting platform.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+🤝 Contribution Guide
+Pull requests and issues are welcome!
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+bash
+Copy
+Edit
+# Create new feature branch
+git checkout -b feature/your-feature
+
+# Make changes, commit, and push
+git commit -m "Add new feature"
+git push origin feature/your-feature
+📜 License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+👤 Author
+Utkarsh Dashora
+🌐 utkarshdashora.dev
+🐙 GitHub
+📧 utkarsh@gmail.com
+
+🔗 Resources
+Supabase Docs
+
+React Docs
+
+Swagger/OpenAPI
+
+Let me know if you want the actual starter code structure (src/, supabase/, components/) scaffolded — I can generate that for you next.
+
+
+
+
+
+
+
+
+
+Ask ChatGPT
